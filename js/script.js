@@ -1,192 +1,70 @@
-var myObj = {
-    createMyElement: function() {
+var doc = document;
 
-        var div = document.createElement('div');
-        div.className = 'master';
-        div.style.width = '500px';
-        div.style.marginTop = '100px';
-        div.style.marginLeft = 'auto';
-        div.style.marginRight = 'auto';
-        div.style.fontSize = '18px';
-        var wrapper = document.querySelector('.wrapper');
-        wrapper.appendChild(div);
+var container = document.createElement('div');
+container.className = 'container';
 
 
-        var h1 = document.createElement('h1');
-        h1.innerHTML = 'Тест по программированию';
-        h1.className = 'header';
-        h1.style.fontSize = '20px';
-        h1.style.marginBottom = '45px';
-        h1.style.textAlign = 'center';
-        h1.style.fontWeight = 'normal';
-        document.querySelector('.div');
-        div.appendChild(h1);
+var tests = {
+    questions: ['Вопрос №1',
+        'Вопрос №2',
+        'Вопрос №3'
+    ],
 
-        var div = document.createElement('div');
-        div.className = 'question';
-        div.style.width = '160px';
-        div.style.display = 'block';
-        div.style.marginLeft = '1000px';
-        document.querySelector('.wrapper');
-        wrapper.appendChild(div);
+    answers: ['Вариант ответа №1',
+        'Вариант ответа №2',
+        'Вариант ответа №3'
+    ],
 
-        var h2 = document.createElement('h2');
-        h2.innerHTML = '1. Вопрос №1';
-        h2.style.fontWeight = 'normal';
-        h2.style.fontSize = '20px';
-        document.querySelector('.div');
-        div.appendChild(h2);
+    container: container,
 
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
+    addHeader: function() {
+        var header = document.createElement('h1');
+        header.innerHTML = 'Тест по программированию';
+        this.container.appendChild(header);
 
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №1';
-        document.querySelector('.div');
-        div.appendChild(label);
+        return header;
+    },
 
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
+    addList: function() {
+        var list = document.createElement('ol');
+        for (var i = 0; i < this.questions.length; i++) {
+            var listItem = document.createElement('li');
+            list.appendChild(listItem);
+            this.container.appendChild(list);
 
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №2';
-        document.querySelector('.div');
-        div.appendChild(label);
+            var question = document.createElement('p');
+            question.innerHTML = this.questions[i];
+            listItem.appendChild(question);
 
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
+            var answer = document.createElement('ul');
+            for (var j = 0; j < this.answers.length; j++) {
+                var answersItem = document.createElement('li');
+                answer.appendChild(answersItem);
+                listItem.appendChild(answer);
+                answersItem.className = 'checkbox';
 
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №3';
-        document.querySelector('.div');
-        div.appendChild(label);
+                var input = document.createElement('input');
+                input.setAttribute('type', 'checkbox');
+                answersItem.appendChild(input);
 
-        var h2 = document.createElement('h2');
-        h2.innerHTML = '2. Вопрос №2';
-        h2.style.fontWeight = 'normal';
-        h2.style.fontSize = '20px';
-        document.querySelector('.div');
-        div.appendChild(h2);
+                var textAnswer = document.createElement('span');
+                answersItem.appendChild(textAnswer);
+                textAnswer.innerHTML = this.answers[j];
+            }
+        }
+    },
 
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
-
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №1';
-        document.querySelector('.div');
-        div.appendChild(label);
-
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
-
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №2';
-        document.querySelector('.div');
-        div.appendChild(label);
-
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
-
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №3';
-        document.querySelector('.div');
-        div.appendChild(label);
-
-        var h2 = document.createElement('h2');
-        h2.innerHTML = '3. Вопрос №3';
-        h2.style.fontWeight = 'normal';
-        h2.style.fontSize = '20px';
-        document.querySelector('.div');
-        div.appendChild(h2);
-
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
-
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №1';
-        document.querySelector('.div');
-        div.appendChild(label);
-
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
-
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №2';
-        document.querySelector('.div');
-        div.appendChild(label);
-
-        var input = document.createElement('input');
-        input.className = 'checkbox';
-        input.type = 'checkbox';
-        input.style.marginRight = '7px';
-        document.querySelector('.div');
-        div.appendChild(input);
-
-        var label = document.createElement('label');
-        label.className = 'label';
-        label.innerHTML = 'Вариант ответа №3';
-        document.querySelector('.div');
-        div.appendChild(label);
-
+    addButton: function() {
         var button = document.createElement('button');
-        button.className = 'myButton';
+        button.className = 'button';
         button.innerHTML = 'Проверить мои результаты';
-        button.style.width = '325px';
-        button.style.marginTop = '100px';
-        button.style.marginLeft = '1144px';
-        button.style.marginRight = 'auto';
-        button.style.fontSize = '18px';
-        button.style.paddingTop = '15px';
-        button.style.paddingLeft = '30px';
-        button.style.paddingRight = '30px';
-        button.style.paddingBottom = '15px';
-        button.style.backgroundColor = '#cfe2f3';
-        button.style.border = '2px solid #000107';
-        document.querySelector('.wrapper');
-        wrapper.appendChild(button);
+        this.container.appendChild(button);
 
-
+        return button;
     }
 };
 
-myObj.createMyElement();
+tests.addHeader();
+tests.addList();
+tests.addButton();
+doc.body.appendChild(container);

@@ -1,0 +1,33 @@
+.container {
+    margin: 0 auto;
+    width: 800px;
+    height: 600px;
+    background-color: rgba(154, 153, 153, .03);
+}
+
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+input {
+    padding-left: 100px;
+}
+
+.button {
+    margin: 20px auto 50px 240px;
+    padding: 10px 30px;
+    background: #cfe2f3;
+    font-size: 20px;
+    border: 1px solid black;
+}
+
+li {
+    font-size: 18px;
+    font-family: Arial, sans-serif;
+}
+
+p {
+    font-weight: bold;
+}
